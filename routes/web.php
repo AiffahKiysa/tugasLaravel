@@ -36,7 +36,7 @@ Route::get('/categories', function(){
 
 Route::get('/categories/{category:slug}', function(Category $category){
     return view('category',[
-        'title' => $category->name,
+        'title' => "Article By Category : $category->name",
         'articles' => $category->articles,
         'category' => $category->name
     ]);
@@ -44,7 +44,7 @@ Route::get('/categories/{category:slug}', function(Category $category){
 
 Route::get('/authors/{author:username}', function(User $author){
     return view('article',[
-        'title' => 'User Article',
+        'title' => 'Article by Author',
         'name' => $author->name,
         'email' => $author->email,
         'articles' => $author->articles,
